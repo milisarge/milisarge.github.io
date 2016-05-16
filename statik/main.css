@@ -1,0 +1,169 @@
+body {
+	background: whitesmoke;
+	margin: 0;
+	border: 0;
+}
+
+#banner{
+	height: 121px;
+	padding: 12px;
+}
+
+#banner img {
+        position: absolute;
+        left: 10px;
+        top: 1px;
+        border: none;
+}
+
+p { margin: 10pt; }
+select { color: #333; }
+
+a img, a:link, a:hover {
+	 border: none;
+}
+
+a:link {
+        text-decoration: none;
+        color: #59A8A8;
+}
+
+a:visited {
+        text-decoration: none;
+        color: orange;
+}
+
+a:hover {
+        text-decoration: none;
+        color: #004090;
+}
+
+#menu a {
+ padding: 10px 10px 10px 10px;
+  margin: 0;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+div.navbar {
+        position: absolute;
+        border: 0;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 121px;
+        background-color: #eee;
+        text-align: right;
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+}
+
+#menu li {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+#leftmenu ul {
+  font-weight: bold;
+  background: #eee;
+  list-style-type: none;
+  position: absolute;
+  left: 10px;
+  top: 145px;
+  border-top: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+  padding: 0;
+  margin: 0;
+  }
+
+#leftmenu li {
+  margin: 0;
+  border-bottom: solid 1px #ddd;
+}
+
+#leftmenu a {
+	text-decoration: none;
+	border: medium none;
+	display: block;
+	margin: 0px;
+	padding: 5px 10px;
+	color: #777
+}
+
+#leftmenulist a:hover {
+  background: #777;
+  color: white;
+}
+
+#homeactive:link, #homeactive:visited, #wikiactive:link, #wikiactive:visited, #downloadactive:link, #downloadactive:visited, #packageactive:link, #packageactive:visited, #forumactive:link, #forumactive:visited,#donateactive:link, #donateactive:visited  {
+  color: white;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+
+#home:link, #home:visited, #wiki:link, #wiki:visited, #download:link, #download:visited, #package:link, #package:visited, #forum:link, #forum:visited,#donate:link, #donate:visited {
+  font-weight: bold;
+  color: #777;
+}
+
+#home:hover, #homeactive:hover, #wiki:hover, #wikiactive:hover, #download:hover, #downloadactive:hover, #package:hover, #packageactive:hover, #forum:hover, #forumactive:hover,#donate:hover, #donateactive:hover{ 
+	background-color: #777;
+	color: white;	
+}
+
+pre {
+	padding: 1em;
+	background: #0099CC;
+	border: 1px;
+	font-weight:bold;
+	font-size: 14;
+}
+
+.newsItem {
+    padding-bottom: 5pt;
+    border-bottom: 1px solid #0C0470;
+}
+
+dt {
+    font-weight:normal;
+}
+em {
+    font-size: 9;
+}
+
+div.main {
+	position: absolute;
+	top: 140px;
+	left: 210px;
+	padding-right: 100px;
+	overflow: hidden;
+}
+
+div.box{
+	position: absolute;
+	top: 140px;
+}
+footer{
+	border-top: 1px solid #ccc;
+	margin-top: 10px;
+}
+footer p {
+	color: #ccc;
+	font-size: .8em;
+}
+
+#updatePackage{
+		width: 170px;
+		font-size: 0.8em;
+}
+#donate-list ul {
+	width:100%
+}
+#donate-list li {
+	float:left;
+	width:25%;
+	min-width:20em
+}
