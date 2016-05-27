@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="TR"/>
+		<title>Milis İşletim Sistemi</title>
+		<link href="statik/main.css" rel="stylesheet" type="text/css">
+		<link rel="shortcut icon" type="image/ico" href="statik/logo-milis.png">
+</head>
+		<body>
+		 
+		 <div class="navbar">
+				 <div id="banner">
+						<img src="statik/logo-milis.png" height="120" width="180">	
+								<ul id="menu">
+										<li> <a id="anasayfa" href="https://milis.gungre.ch/index.html">Anasayfa</a></li>				
+										<li> <a id="rehber" href="https://milis.gungre.ch/rehber.html">Wiki</a></li>							
+										<li> <a id="indir" href="https://milis.gungre.ch/indir.html">İndir</a></li>
+										<li> <a id="paketler" href="https://milis.gungre.ch/packages">Paketler</a></li>	
+										<li> <a id="sss" href="https://milis.gungre.ch/sss.html">Sorular</a></li>	
+										<li> <a id="github" href="https://github.com/milisarge/malfs-milis/">Github</a></li>	
+																								
+								</ul>
+			 	</div>		 
+		 </div>
+		 
+		 <div id="leftmenu">
+		  			<ul id="leftmenulist">
+       					 <li><a href="https://milis.gungre.ch/kurulum.html">Kurulum</a></li>
+        				 <li><a href="https://milis.gungre.ch/mps.html">MPS-paket sistemi</a></li>
+        				 <li><a href="https://milis.gungre.ch/1.html">Derleme</a></li>
+        				 <li> <a id="destek" href="https://milis.gungre.ch/xfce4_iso.html">Xfce4 Iso Yapımı</a></li>		
+        			</ul>
+			</div>
+			
+			<div class="main">
+				<p>
+				<h2>MPS (Milis Paket Sistemi)</h2>
+					
+				<p>Mps Milis işletim sisteminin kendine özgü sıfırdan bash betik dilinde yazılmış paket yöneticisidir.
+				<p> Mps ile talimatnamedeki talimatları kullanarak paket üretebilir,paket kurabilir kaldırabilir ve güncelleyebilirsiniz.</p>
+				<b>İkili paket veritabanini gunceller</b>
+				<pre>$ mps -G</pre>  
+				<b>Git sunucusundan talimatname ve sistem günceller</b>                     
+				<pre>$ mps -Ggit</pre>  
+				
+				<b>İlgili paketi bağimlılıklarıyla ağdan çekip kurar</b>  
+				<pre>$ mps -kur paket_ismi </pre>    
+				
+				<b>İlgili paketi kaldırır</b>  
+				<pre>$ mps -s paket_ismi </pre> 
+				   
+				<b>Yereldeki paketi bagimliliksiz kurar</b>  
+				<pre>$ mps -k paket_ismi </pre> 
+				   
+				<b>Kurulu paket listesini verir</b>  
+				<pre>$ mps -kl </pre>  
+				  
+				<b>İlgili paketin kurulu olma durumunu verir</b>  
+				<pre>$ mps -kk paket_ismi </pre>   
+				 
+				<b>İlgili paketin talimat dosyasına göre bağımlıksız derler,paketler</b>  
+				<pre>$ mps -d paket_ismi </pre>    
+				
+				<b>İlgili paketin talimat dosyasına göre bağımlıklarıyla derler,paketler</b>  
+				<pre>$ mps -derle paket_ismi </pre>  
+				
+				</p>	
+				<footer><p>All trademarks and registered trademarks are the property of their respective owners..</p></footer>			
+			</div>
+			
+		
+
+
+
+    
+    </body></html>

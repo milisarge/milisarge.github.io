@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="TR"/>
+		<title>Milis İşletim Sistemi</title>
+		<link href="statik/main.css" rel="stylesheet" type="text/css">
+		<link rel="shortcut icon" type="image/ico" href="statik/logo-milis.png">
+</head>
+		<body>
+		 
+		 <div class="navbar">
+				 <div id="banner">
+						<img src="statik/logo-milis.png" height="120" width="180">	
+								<ul id="menu">
+										<li> <a id="anasayfa" href="https://milis.gungre.ch/index.html">Anasayfa</a></li>				
+										<li> <a id="rehber" href="https://milis.gungre.ch/rehber.html">Wiki</a></li>							
+										<li> <a id="indir" href="https://milis.gungre.ch/indir.html">İndir</a></li>
+										<li> <a id="paketler" href="https://milis.gungre.ch/packages">Paketler</a></li>
+										<li> <a id="sss" href="https://milis.gungre.ch/sss.html">Sorular</a></li>		
+										<li> <a id="github" href="https://github.com/milisarge/malfs-milis/">Github</a></li>	
+																								
+								</ul>
+			 	</div>		 
+		 </div>
+		 
+		 <div id="leftmenu">
+		  			<ul id="leftmenulist">
+       					 <li><a href="https://milis.gungre.ch/kurulum.html">Kurulum</a></li>
+        				 <li><a href="https://milis.gungre.ch/mps.html">MPS-paket sistemi</a></li>
+        				 <li><a href="https://milis.gungre.ch/1.html">Derleme</a></li>
+        				 <li> <a id="destek" href="https://milis.gungre.ch/xfce4_iso.html">Xfce4 Iso Yapımı</a></li>		
+        			</ul>
+			</div>
+			
+			<div class="main">
+				<p>
+				<h1>Milis Linux Kurulumu</h1>						
+					
+<p>Çalışan iso'dan direk sistemi hedef disk bölümünüze kurabilirsiniz.Ayrıca o an çalışan iso üzerinde yaptığınız ayarlamalar da kaybolmayacak ve o şekilde kurulacaktır.<p>
+<p>Yeni bir terminal açıp ve aşağıdaki yönergeleri takip ederek sistem kurulumunu yapabilirsiniz.<p>
+<p>1-hedef disk bolumunu formatla </p>
+<pre>$ mkfs.ext4 /dev/sdax</pre>
+<p>2-bolumu /mnt altına bagla </p>
+<pre>$  mount /dev/sdax /mnt</pre>
+<p>3-mevcut dosya sistemini hedefe kopyala</p>
+<pre>$ cp -axvnu /  /mnt</pre>
+<p>4-initramfs ( baslatici) oluştur</p>
+<pre>$ chroot /mnt dracut --no-hostonly --add-drivers "ahci" -f /boot/initramfs</pre>
+<p>5-gerekli grub ayarlarını yap.</p>
+<pre>$ grub-install --boot-directory=/mnt/boot /dev/sdy
+$ grub-mkconfig -o /mnt/boot/grub/grub.cfg
+</pre>
+
+
+							</p>	
+							<footer><p>All trademarks and registered trademarks are the property of their respective owners..</p></footer>			
+			</div>
+			
+		
+
+
+
+    
+    </body></html>
