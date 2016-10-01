@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Milis Linux | Kurulum</title>
+    <title>Milis Linux | Derleme Ortamı Kurulumu</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet"> 
@@ -46,10 +46,10 @@
                         <li><a href="index.html">Anasayfa</a></li>
                         <li class="dropdown"><a href="#">Wiki <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li class="active"><a href="kurulum.html">Kurulum</a></li>
+                                <li><a href="kurulum.html">Kurulum</a></li>
                                 <li><a href="skurulum.html">Sanala Kurulum</a></li>
                                 <li><a href="mps.html">MPS Paket Sistemi</a></li>
-                                <li><a href="derleme.html">Paket Oluşturma</a></li>
+                                <li class="active"><a href="derleme.html">Paket Oluşturma</a></li>
                                 <li><a href="xfce4_iso.html">XFCE4 ISO Yapımı</a></li>
                             </ul>
                         </li>                  
@@ -74,21 +74,24 @@
     <!--/#header-->
 
     <div class="container">
-        <h2 class="title">Milis Linux Kurulumu</h2>
-            <p>Çalışan iso'dan direk sistemi hedef disk bölümünüze kurabilirsiniz.Ayrıca o an çalışan iso üzerinde yaptığınız ayarlamalar da kaybolmayacak ve o şekilde kurulacaktır.<p>
-            <p>Yeni bir terminal açıp ve aşağıdaki yönergeleri takip ederek sistem kurulumunu yapabilirsiniz.<p>
-            <p>1-hedef disk bolumunu formatla </p>
-            <pre>$ mkfs.ext4 /dev/sdax</pre>
-            <p>2-bolumu /mnt altına bagla </p>
-            <pre>$  mount /dev/sdax /mnt</pre>
-            <p>3-mevcut dosya sistemini hedefe kopyala</p>
-            <pre>$ cp -axvnu /  /mnt</pre>
-            <p>4-initramfs ( baslatici) oluştur</p>
-            <pre>$ chroot /mnt dracut --no-hostonly --add-drivers "ahci" -f /boot/initramfs</pre>
-            <p>5-gerekli grub ayarlarını yap.</p>
-            <pre>$ grub-install --boot-directory=/mnt/boot /dev/sdy
-$ grub-mkconfig -o /mnt/boot/grub/grub.cfg
-            </pre>
+        <h2 class="title">Derleme Ortamı Kurulumu</h2>
+            <p>Bu yönergeyi takip ederek paket üretimi için derleme ortamı oluşturmaktayız.(ilk kurulum)</p>
+            <pre>$ wget https://milis.gungre.ch/iso/milis-bootstrap-enson.sfs -O /mnt/milis-bootstrap.sfs</pre>
+            <pre>$ cd /mnt &amp;&amp; unsquashfs milis-bootstrap.sfs</pre>
+            <pre>$ mv squashfs-root lfs</pre>
+            <pre>$ cd   /sources/milis.git</pre>
+            <pre>$ export LFS=/mnt/lfs</pre>
+            <pre>$ ./lfs-mekanizma  -cg</pre>
+            <pre>$ mps -GG</pre>
+            <pre>$ cp  /root/ayarlar/mps.conf  /etc</pre>
+            <pre>$ mps -G</pre>
+            <p>İlk ayarlamalar yapıldıktan sonra diğer girişlerimizde sadece</p>
+            <pre>$ cd   /sources/milis.git</pre>
+            <pre>$ export LFS=/mnt/lfs</pre>
+            <pre>$ ./lfs-mekanizma  -cg</pre>
+            <pre>$ mps -GG</pre>
+            <pre>$ mps -G</pre>
+            <p>komutlarını işletiriz.</p>
     </div>
 
 
