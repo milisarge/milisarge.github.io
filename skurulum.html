@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Milis Linux | Kurulum</title>
+    <title>Milis Linux | Sanala Kurulum</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet"> 
@@ -46,8 +46,8 @@
                         <li><a href="index.html">Anasayfa</a></li>
                         <li class="dropdown"><a href="#">Wiki <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li class="active"><a href="kurulum.html">Kurulum</a></li>
-                                <li><a href="skurulum.html">Sanala Kurulum</a></li>
+                                <li><a href="kurulum.html">Kurulum</a></li>
+                                <li class="active"><a href="skurulum.html">Sanala Kurulum</a></li>
                                 <li><a href="mps.html">MPS Paket Sistemi</a></li>
                                 <li><a href="derleme.html">Paket Oluşturma</a></li>
                                 <li><a href="xfce4_iso.html">XFCE4 ISO Yapımı</a></li>
@@ -74,22 +74,59 @@
     <!--/#header-->
 
     <div class="container">
-        <h2 class="title">Milis Linux Kurulumu</h2>
-            <p>Çalışan iso'dan direk sistemi hedef disk bölümünüze kurabilirsiniz.Ayrıca o an çalışan iso üzerinde yaptığınız ayarlamalar da kaybolmayacak ve o şekilde kurulacaktır.<p>
-            <p>Yeni bir terminal açıp ve aşağıdaki yönergeleri takip ederek sistem kurulumunu yapabilirsiniz.<p>
-            <p>1-hedef disk bolumunu formatla </p>
-            <pre>$ mkfs.ext4 /dev/sdax</pre>
-            <p>2-bolumu /mnt altına bagla </p>
-            <pre>$  mount /dev/sdax /mnt</pre>
-            <p>3-mevcut dosya sistemini hedefe kopyala</p>
+        <h2 class="title">Milis Linux'un Sanala Kurulumu (QEMU İçin)</h2>
+            <p>Çalışan iso'dan direk sistemi hedef disk bölümünüze kurabilirsiniz.Ayrıca o an çalışan iso üzerinde yaptığınız ayarlamalar da kaybolmayacak ve o şekilde kurulacaktır.</p><p>
+            </p><p>Yeni bir terminal açıp ve aşağıdaki yönergeleri takip ederek sistem kurulumunu yapabilirsiniz.Sanal kurulum Qemu'da gerçekleştirilmiştir.</p><p>
+            </p><p>1-Sanal disk (16gb) oluşturmak </p>
+            <pre>$ qemu-img create -f raw sanal.img 16G</pre>
+            <p>2-Sistemin çalışan iso ve sanal bellek ile açılması </p>
+            <pre>$ qemu-system-x86_64 -m 1024  --enable-kvm milis-xfce4-20160514.iso  -hdb sanal.img</pre>
+            <b>Aşağıdaki komutlar ve resimler sanal ortamda yapılanlardır.</b>
+            <p>3a-gparted programını kullanarak sdb üzerinde ext4 dosya sistemi oluşturulur. </p>
+            <div class="row">
+                <div class="col-md-3">
+                    <p>Gparted ile sdb bölümü seçilir.</p> <br> <br>
+                    <a href="ekgor/skur1.png"><img class="img-responsive" src="ekgor/skur1.png"></a>
+                </div>
+                <div class="col-md-3">
+                    <p>Aygıt-->Yeni Bölüm Oluştur "msdos" seçili halde onaylanır ve sistem formatlanmaya hazırdır.</p>
+                    <a href="ekgor/skur2.png"><img class="img-responsive" src="ekgor/skur2.png"></a>
+                </div>
+                <div class="col-md-3">
+                    <p>Ayrılmamış bölüm sağ tıklanıp yeni seçilir ve resimdeki pencere öntanımlı onaylanır.</p><br>
+                    <a href="ekgor/skur4.png"><img class="img-responsive" src="ekgor/skur4.png"></a>
+                </div>
+                <div class="col-md-3">
+                    <p>Yapılan değişiklikler yukarıdan yeşil tikle onaylanır ve sdb1 bölümünün oluştuğu görülür.</p>
+                    <a href="ekgor/skur5.png"><img class="img-responsive" src="ekgor/skur5.png"></a>
+                </div>                                                     
+            </div>
+            <p>3b-bolumu /mnt altına bagla </p>
+            <pre>$  mount /dev/sdb1 /mnt</pre>
+            <p>4-mevcut dosya sistemini hedefe kopyala</p>
             <pre>$ cp -axvnu /  /mnt</pre>
-            <p>4-initramfs ( baslatici) oluştur</p>
+            <p>5-initramfs ( baslatici) oluştur</p>
             <pre>$ chroot /mnt dracut --no-hostonly --add-drivers "ahci" -f /boot/initramfs</pre>
-            <p>5-gerekli grub ayarlarını yap.</p>
-            <pre>$ grub-install --boot-directory=/mnt/boot /dev/sdy
-$ grub-mkconfig -o /mnt/boot/grub/grub.cfg
+            <p>6-gerekli grub ayarlarını yap.</p>
+            <pre>$ grub-install --boot-directory=/mnt/boot /dev/sdb
+            $ grub-mkconfig -o /mnt/boot/grub/grub.cfg
             </pre>
-    </div>
+            <p>7-grubda sanal imaj için değişiklik yapılması.<b>/mnt/boot/grub/grub.cfg</b> açılır ve ilgili satırlar(<b>68,69,70</b>) resimdeki gibi düzeltilir.</p>
+            <div class="row">
+                <div class="col-md-6"><a href="ekgor/skur6.png"><img class="img-responsive" src="ekgor/skur6.png"></a></div>
+            </div>
+            <p>8-sanaldan çıkılıp milis kurulan imaj çalıştırılır.</p>
+            <pre>$ qemu-system-x86_64 -m 1024  --enable-kvm -hda sanal.img</pre>
+             <div class="row">
+                <div class="col-md-4">
+                    <a href="ekgor/skur7.png"><img class="img-responsive" src="ekgor/skur7.png"></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="ekgor/skur8.png"><img class="img-responsive" src="ekgor/skur8.png"></a><br>
+                </div>
+
+            </div>
+            </div>
 
 
     <footer id="footer">
