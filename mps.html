@@ -1,43 +1,99 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Language" content="TR"/>
-		<title>Milis İşletim Sistemi</title>
-		<link href="statik/main.css" rel="stylesheet" type="text/css">
-		<link rel="shortcut icon" type="image/ico" href="statik/logo-milis.png">
-</head>
-		<body>
-		 
-		 <div class="navbar">
-				 <div id="banner">
-						<img src="statik/logo-milis.png" height="120" width="180">	
-								<ul id="menu">
-										<li> <a id="anasayfa" href="https://milis.gungre.ch/index.html">Anasayfa</a></li>				
-										<li> <a id="rehber" href="https://milis.gungre.ch/rehber.html">Wiki</a></li>							
-										<li> <a id="indir" href="https://milis.gungre.ch/indir.html">İndir</a></li>
-										<li> <a id="paketler" href="https://milis.gungre.ch/packages">Paketler</a></li>	
-										<li> <a id="sss" href="https://milis.gungre.ch/sss.html">Sorular</a></li>	
-										<li> <a id="github" href="https://github.com/milisarge/malfs-milis/">Github</a></li>	
-																								
-								</ul>
-			 	</div>		 
-		 </div>
-		 
-		 <div id="leftmenu">
-		  			<ul id="leftmenulist">
-       					 <li><a href="https://milis.gungre.ch/kurulum.html">Kurulum</a></li>
-        				 <li><a href="https://milis.gungre.ch/mps.html">MPS-paket sistemi</a></li>
-        				 <li><a href="https://milis.gungre.ch/1.html">Derleme</a></li>
-        				 <li> <a id="destek" href="https://milis.gungre.ch/xfce4_iso.html">Xfce4 Iso Yapımı</a></li>		
-        			</ul>
-			</div>
-			
-			<div class="main">
-				<p>
-				<h2>MPS (Milis Paket Sistemi)</h2>
-					
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Milis Linux | Milis Paket Sistemi</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet"> 
+    <link href="css/lightbox.css" rel="stylesheet"> 
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+    <header id="header"> 
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <h1><img src="images/logo.png" alt="logo"></h1>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li class="dropdown"><a href="#">Wiki <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="kurulum.html">Kurulum</a></li>
+                                <li><a href="skurulum.html">Sanala Kurulum</a></li>
+                                <li class="active"><a href="mps.html">MPS Paket Sistemi</a></li>
+                                <li><a href="derleme.html">Paket Oluşturma</a></li>
+                                <li><a href="xfce4_iso.html">XFCE4 ISO Yapımı</a></li>
+                            </ul>
+                        </li>                  
+                        <li class="dropdown"><a href="#">Ekran Görüntüleri ve Videolar <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="goruntu.html">Ekran Görüntüleri</a></li>
+                                <li><a href="video.html">Eğitim Videoları</a></li>
+                            </ul>
+                        </li>     
+                        <li><a href="indir.html">İndir</a></li>
+                        <li><a href="sss.html">SSS</a></li>
+                        <li><a href="https://github.com/milisarge/malfs-milis">Github</a></li>
+                        <li><a href="https://milis.gungre.ch/packages/">Paketler</a></li>                                                     
+                    </ul>
+                </div>
+                <div class="search">
+                    <form role="form">
+                        <i class="fa fa-search"></i>
+                        <div class="field-toggle">
+                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <div class="container">
+        <h2 class="title">MPS (Milis Paket Sistemi)</h2>
 				<p>Mps Milis işletim sisteminin kendine özgü sıfırdan bash betik dilinde yazılmış paket yöneticisidir.
 				<p> Mps ile talimatnamedeki talimatları kullanarak paket üretebilir,paket kurabilir kaldırabilir ve güncelleyebilirsiniz.</p>
+				<h3 class="title">Parametreler</h3>
+				<b>İkili paket veritabanını ve sistemi günceller</b>
+				<pre>$ mps guncelle</pre>
+				<b>Dosyadan ya da depodan yazılım paketi kurar</b>
+				<pre>$ mps kur paket_adi
+$ mps kur paket_adi.mps.lz</pre>
+				<b>Paket siler</b>
+				<pre>$ mps sil paket_adi</pre>
+				<b>Paket arar</b>
+				<pre>$ mps ara paket_adi</pre>
+				<br>
+		<h3 class="title">API Parametreler</h3>
 				<b>İkili paket veritabanini gunceller</b>
 				<pre>$ mps -G</pre>  
 				<b>Git sunucusundan talimatname ve sistem günceller</b>                     
@@ -64,13 +120,51 @@
 				<b>İlgili paketin talimat dosyasına göre bağımlıklarıyla derler,paketler</b>  
 				<pre>$ mps -derle paket_ismi </pre>  
 				
-				</p>	
-				<footer><p>All trademarks and registered trademarks are the property of their respective owners..</p></footer>			
-			</div>
-			
-		
+				</p>	    </div>
 
 
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>İletişim</h2>
+                        <address>
+                        E-mail: <a href="mailto:milisarge@gmail.com">milisarge@gmail.com</a> <br>
+                        IRC: freenode.net/#milisarge <br>
+                        Telegram grubumuz: <a href="https://telegram.me/joinchat/EL4JOgl8whyObO5T-Ao1cg">Milis Linux</a> <br>
+                        Telegram bildirim kanalı: <a href="telegram.me/milislinux">Milis Linux Haber</a>  
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>Sosyal</h2>
+                        <address>
+                        Twitter: <a href="#">Milis Linux</a> <br>
+                        Tuxweet: <a href="#">Milis Linux</a>  
+                        </address>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>&copy; Milis GNU/Linux 2016.Bu site <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"> Creative Commons Alıntı 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır..</p>
+                        <p>Tema <a target="_blank" rel="nofollow" href="http://www.themeum.com">Themeum</a> Tasarım: <a href="furkankalkan.com">Furkan Kalkan</a></p>
+                        <p>Sunucu desteği için <a href="http://gungre.ch">Lucas Sköldqvist</a>'e teşekkür ederiz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
 
-    
-    </body></html>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>   
+</body>
+</html>
