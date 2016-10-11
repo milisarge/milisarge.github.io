@@ -92,7 +92,7 @@
             <pre>$ chroot /mnt dracut --no-hostonly --add-drivers "ahci" -f /boot/initramfs</pre>
             <p>5-gerekli grub ayarlarını yap.</p>
             <pre>$ grub-install --boot-directory=/mnt/boot /dev/sdy
-$ grub-mkconfig -o /mnt/boot/grub/grub.cfg
+$ chroot /mnt grub-mkconfig -o /mnt/boot/grub/grub.cfg
             </pre>
     </div>
 
