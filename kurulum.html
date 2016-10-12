@@ -89,6 +89,9 @@
             <p>3-mevcut dosya sistemini hedefe kopyala</p>
             <pre>$ cp -axvnu /  /mnt</pre>
             <p>4-initramfs ( baslatici) oluştur</p>
+            <pre>$ mount --bind /dev /mnt/dev</pre>
+			<pre>$ mount --bind /sys /mnt/sys</pre>
+			<pre>$ mount --bind /proc /mnt/proc</pre>
             <pre>$ chroot /mnt dracut --no-hostonly --add-drivers "ahci" -f /boot/initramfs</pre>
             <p>5-gerekli grub ayarlarını yap.</p>
             <pre>$ grub-install --boot-directory=/mnt/boot /dev/sdy
