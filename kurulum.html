@@ -92,7 +92,7 @@
             <pre>$ mount --bind /dev /mnt/dev</pre>
 			<pre>$ mount --bind /sys /mnt/sys</pre>
 			<pre>$ mount --bind /proc /mnt/proc</pre>
-            <pre>$ chroot /mnt dracut --no-hostonly --add-drivers "ahci" -f /boot/initramfs</pre>
+            <pre>$ chroot /mnt dracut -N --force --xz --omit systemd  /boot/initramfs</pre>
             <p>5-gerekli grub ayarlarını yap.</p>
             <pre>$ grub-install --boot-directory=/mnt/boot /dev/sdy
 $ chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
