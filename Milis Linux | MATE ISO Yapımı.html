@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Milis Linux | MATE ISO Yapımı</title>
+    <link href="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/bootstrap.css" rel="stylesheet">
+    <link href="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/font-awesome.css" rel="stylesheet">
+    <link href="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/animate.css" rel="stylesheet"> 
+    <link href="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/lightbox.css" rel="stylesheet"> 
+    <link href="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/main.css" rel="stylesheet">
+    <link href="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="https://milis.gungre.ch/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://milis.gungre.ch/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://milis.gungre.ch/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://milis.gungre.ch/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://milis.gungre.ch/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+    <header id="header"> 
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="https://milis.gungre.ch/index.html">
+                        <h1><img src="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/logo.png" alt="logo"></h1>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://milis.gungre.ch/index.html">Anasayfa</a></li>
+                        <li class="dropdown"><a href="#">Wiki <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="https://milis.gungre.ch/kurulum.html">Kurulum</a></li>
+                                <li><a href="https://milis.gungre.ch/skurulum.html">Sanala Kurulum</a></li>
+                                <li><a href="https://milis.gungre.ch/mps.html">MPS Paket Sistemi</a></li>
+                                <li><a href="https://milis.gungre.ch/derleme.html">Paket Oluşturma</a></li>
+                                <li class="active"><a href="https://milis.gungre.ch/mate_iso.html">MATE ISO Yapımı</a></li>
+                            </ul>
+                        </li>                  
+                        <li class="dropdown"><a href="#">Ekran Görüntüleri ve Videolar <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="https://milis.gungre.ch/goruntu.html">Ekran Görüntüleri</a></li>
+                                <li><a href="https://milis.gungre.ch/video.html">Eğitim Videoları</a></li>
+                            </ul>
+                        </li>     
+                        <li><a href="https://milis.gungre.ch/indir.html">İndir</a></li>
+                        <li><a href="https://milis.gungre.ch/sss.html">SSS</a></li>
+                        <li><a href="https://github.com/milisarge/malfs-milis">Github</a></li>
+                        <li><a href="https://milis.gungre.ch/packages/">Paketler</a></li>                                                     
+                    </ul>
+                </div>
+                <div class="search">
+                    <form role="form">
+                        <i class="fa fa-search"></i>
+                        <div class="field-toggle">
+                            <input class="search-form" autocomplete="off" placeholder="Search" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <div class="container">
+        <h2 class="title">İkili Paketleri Kullanarak Mate Isosu Yapılması</h2>
+                <p>Bu yönergeyi takip ederek herhangi bir linux ortamından milis mate isosunu oluşturabilirsiniz.</p>
+
+                <p>Gerekli Paketler:lzip,squashfs-tools(mksquashfs),syslinux-utils(isohybrid),genisoimage</p>
+				<h3>A-Herhangi bir linux kullanılıyorsa:</h3>
+                <b>milis klonlanır ve çalışma dizinine girilir.</b>
+                <pre>$ git clone https://github.com/milisarge/malfs-milis &amp;&amp; cd malfs-milis</pre>
+				<h3>B-Milis linux kullanılıyorsa:</h3>
+				<b>mevcut milis çalışma dizinine girilir.</b>
+				<pre>$ cd /sources/milis.git/</pre>
+                <h3>Bütün linux ortamları için ortak komutlar</h3>
+                <b>milis-boostrap indirilir ve mnt altına lfs dizini 
+olarak açılır.Eğer mevcut lfs kullanıyorsanız silmek yerine yedek 
+alabilirsiniz.</b>
+                <pre>$ rm -r /mnt/lfs (veya   mv /mnt/lfs /mnt/lfs-ortam)
+
+$ cd /mnt &amp;&amp; wget http://milis.gungre.ch/iso/milis-bootstrap-enson.sfs &amp;&amp; 
+
+$ unsquashfs milis-bootstrap-enson.sfs &amp;&amp; mv squashfs-root lfs &amp;&amp; cd -
+                </pre>
+				<b>ortam yolu tanıtılır.</b>
+                <pre>$ export LFS=/mnt/lfs</pre>
+                <b>chroot içine girilir.</b>
+                <pre>$ ./lfs-mekanizma -cg</pre>
+                <b>yukarıdaki komuttan sonra işlemler chroot içinde olacak!</b>
+                <pre># mps -GG
+
+# cp /root/ayarlar/mps.conf /etc/
+
+# mps -G
+
+# mps -kuruld /root/talimatname/temel-ek/derleme.sira
+
+# mps -kur mate
+
+# mps -kurul /root/ayarlar/gerekli_programlar
+
+# cp /root/ayarlar/.xinitrc.mate /root/.xinitrc
+
+# cp -r /root/ayarlar/mate/.config /root/
+
+# cp /root/ayarlar/network /etc/sysconfig/
+                </pre>
+
+                <b>kokdizin kurulum ayarı</b>
+
+                <pre># cd /var/lib/pkg/DB
+# grep -rli '/mnt/lfs' * | xargs -i@ sed -i 's/\/mnt\/lfs\///g' @
+                </pre>
+
+                <b>initrd yapmak için</b>
+
+                <pre># cd /root
+
+# ./lfs-mekanizma -bo
+                </pre>
+
+                <b>paket-deposunu ve /tmp temizlemek için</b>
+
+                <pre># rm -r /depo/paketler/*
+
+# mv /var/lib/pkg/tarihce/temel-pkvt.tar.lz /var/lib/pkg/tarihce/temel2-pkvt.tar.lz
+
+# rm -r /tmp/*
+                </pre>
+
+                <b>mevcut sistem koruma noktası oluşturmak için</b>
+
+                <pre># mps -tro
+				</pre>
+                <b>gerekli masaüstü ayar ve düzeltmeleri yapılır.</b>
+
+                <pre># tamir_masaustu
+				</pre>
+				<pre># exit
+                </pre>
+
+                <b>yukarıdaki komut ile chroot dışına çıkılıp iso yapılır.</b>
+
+                <b>aşağıdaki komutla iso için dosya imajı hazırlanır.</b>
+
+                <pre>$ ./lfs-mekanizma -so
+                </pre>
+
+                <b>İki türlü iso yapılabilir:</b><p>
+
+                <b>1-aşağıdaki komutla normal iso yapılır.</b></p><p>
+
+                </p><pre>$ ./lfs-mekanizma -io</pre><p>
+
+                <b>2-aşağıdaki iki komut ile uefi destekli iso yapılır.</b></p><p>
+
+                </p><pre>$ ./lfs-mekanizma -geb
+
+$ ./lfs-mekanizma -iof
+                </pre>
+
+                <b>test etmek için</b>
+
+                <pre>$ ./qemu.sh milislinux-live.iso
+                </pre>
+
+                <b>not: giriş için kullanıcı:root şifre:milis</b>
+    </div>
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/under.png" class="img-responsive inline" alt="">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>İletişim</h2>
+                        <address>
+                        E-mail: <a href="mailto:milisarge@gmail.com">milisarge@gmail.com</a> <br>
+                        IRC: freenode.net/#milisarge <br>
+                        Telegram grubumuz: <a href="https://telegram.me/joinchat/EL4JOgl8whyObO5T-Ao1cg">Milis Linux</a> <br>
+                        Telegram bildirim kanalı: <a href="https://milis.gungre.ch/telegram.me/milislinux">Milis Linux Haber</a>  
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>Sosyal</h2>
+                        <address>
+                        Twitter: <a href="#">Milis Linux</a> <br>
+                        Tuxweet: <a href="#">Milis Linux</a>  
+                        </address>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>© Milis GNU/Linux 2016.Bu site <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"> Creative Commons Alıntı 4.0 Uluslararası Lisansı</a> ile lisanslanmıştır..</p>
+                        <p>Tema <a target="_blank" rel="nofollow" href="http://www.themeum.com/">Themeum</a> Tasarım: <a href="https://milis.gungre.ch/furkankalkan.com">Furkan Kalkan</a></p>
+                        <p>Sunucu desteği için <a href="http://gungre.ch/">Lucas Sköldqvist</a>'e teşekkür ederiz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script type="text/javascript" src="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/jquery.js"></script>
+    <script type="text/javascript" src="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/bootstrap.js"></script>
+    <script type="text/javascript" src="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/lightbox.js"></script>
+    <script type="text/javascript" src="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/wow.js"></script>
+    <script type="text/javascript" src="Milis%20Linux%20%7C%20MATE%20ISO%20Yap%C4%B1m%C4%B1_files/main.js"></script>   
+
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src=""><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>
