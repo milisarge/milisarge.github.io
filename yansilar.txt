@@ -2,3 +2,4 @@ http://ftp.cc.uoc.gr/mirrors/linux/milis/iso
 ftp://ftp.cc.uoc.gr/mirrors/linux/milis/iso
 https://milis.gungre.ch/iso
 https://milis.gungre.ch/packages
+https://hubulut.hacettepe.edu.tr/index.php/s/FpHqnGNqNIndX0d
