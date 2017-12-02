@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Milis Linux | XFCE4 ISO Yapımı</title>
+    <title>Milis Linux | MATE ISO Yapımı</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet"> 
@@ -50,7 +50,7 @@
                                 <li><a href="skurulum.html">Sanala Kurulum</a></li>
                                 <li><a href="mps.html">MPS Paket Sistemi</a></li>
                                 <li><a href="derleme.html">Paket Oluşturma</a></li>
-                                <li class="active"><a href="xfce4_iso.html">XFCE4 ISO Yapımı</a></li>
+                                <li class="active"><a href="mate_iso.html">MATE ISO Yapımı</a></li>
                             </ul>
                         </li>                  
                         <li class="dropdown"><a href="#">Ekran Görüntüleri ve Videolar <i class="fa fa-angle-down"></i></a>
@@ -79,8 +79,8 @@
     <!--/#header-->
 
     <div class="container">
-        <h2 class="title">İkili Paketleri Kullanarak Xfce4 Isosu Yapılması</h2>
-                <p>Bu yönergeyi takip ederek herhangi bir linux ortamından milis xfce4 isosunu oluşturabilirsiniz.</p>
+        <h2 class="title">İkili Paketleri Kullanarak Mate Isosu Yapılması</h2>
+                <p>Bu yönergeyi takip ederek herhangi bir linux ortamından milis mate isosunu oluşturabilirsiniz.</p>
 
                 <p>Gerekli Paketler:lzip,squashfs-tools(mksquashfs),syslinux-utils(isohybrid),genisoimage</p>
 
@@ -107,13 +107,13 @@ $ unsquashfs milis-bootstrap-enson.sfs &amp;&amp; mv squashfs-root lfs &amp;&amp
 
 # mps -kuruld /root/talimatname/temel-ek/derleme.sira
 
-# mps -kur xfce4
+# mps -kur mate
 
 # mps -kurul /root/ayarlar/gerekli_programlar
 
-# cp /root/ayarlar/.xinitrc.xfce4 /root/.xinitrc
+# cp /root/ayarlar/.xinitrc.mate /root/.xinitrc
 
-# cp -r /root/ayarlar/xfce4/.config /root/
+# cp -r /root/ayarlar/mate/.config /root/
 
 # cp /root/ayarlar/network /etc/sysconfig/
                 </pre>
@@ -143,12 +143,12 @@ $ unsquashfs milis-bootstrap-enson.sfs &amp;&amp; mv squashfs-root lfs &amp;&amp
                 <b>mevcut sistem koruma noktası oluşturmak için</b>
 
                 <pre># mps -tro
-
+				</pre>
                 <b>gerekli masaüstü ayar ve düzeltmeleri yapılır.</b>
 
                 <pre># tamir_desktop_database
                 <pre># tamir_masaustu_simge
-
+				</pre>
 # exit
                 </pre>
 
