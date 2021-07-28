@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+
+<channel>
+<title>Blog</title>
+<link>http://localhost:8000/</link>
+<description>Grow with Technology</description>
+
+<item>
+<title>Milis Linux 2.0 Ekim Sürümü (Beta)</title>
+<link>http://localhost:8000/blog/Milis-20-Beta-2020-10/</link>
+<description>
+<![CDATA[
+<p>
+27-10-2020 tarihli yeni çalışan ve kurulan imaj dosyamız oluşturuldu. Yeni beta sürümde yapılan değişiklikler aşağıda belirtilmiştir: Linux çekirdeği 5.8.15 sürümüne güncellendi. Linux-firmware 20201022 sürümüne güncellendi.&nbsp;<a href="http://localhost:8000/blog/Milis-20-Beta-2020-10/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/Milis-20-Beta-2020-10/">....</a></p>
+]]>
+</description>
+<pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Milis Linux 2.0 (Beta) İlk Sürümü</title>
+<link>http://localhost:8000/blog/Milis-20-Beta/</link>
+<description>
+<![CDATA[
+<p>
+01-01-2020 tarihli yeni çalışan ve kurulan imaj dosyamız oluşturuldu. Sürüm no 2.0 ve kod adı "HAN" olan sistem çalışmasında yapılan değişiklikler aşağıda belirtilmiştir: Milis Linux&nbsp;<a href="http://localhost:8000/blog/Milis-20-Beta/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/Milis-20-Beta/">....</a></p>
+]]>
+</description>
+<pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Milis Linux Gelişim Raporu 2016-2019</title>
+<link>http://localhost:8000/blog/gelisim_rapor_2016-2019/</link>
+<description>
+<![CDATA[
+<p>
+2019 yılı itibariyle Milis Linux Projesi üç yılını tamamlarken, projenin tarihsel gelişim sürecini özetlersek; Milis Linux Projesi, anasayfada belirttiğimiz üzere "Milli İşletim Sistemi" geliştirme çalışması&nbsp;<a href="http://localhost:8000/blog/gelisim_rapor_2016-2019/">...</a>
+</p>
+<p><a href="http://localhost:8000/blog/gelisim_rapor_2016-2019/">....</a></p>
+]]>
+</description>
+<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
+</item>
+
+
+</channel>
+</rss>
